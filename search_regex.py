@@ -27,7 +27,7 @@ def search_regex(reg, file):
     pattern = re.compile(reg)
     for i, line in enumerate(file):
         for match in re.finditer(pattern, line.strip()):
-            print 'Found on line %s: %s' % (i+1, line)
+            print 'Found on line %s, column %s : %s' % (i+1, match.start(0)+1, line.strip())
     
 
 def main():
