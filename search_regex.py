@@ -39,7 +39,10 @@ def search_regex(reg, file, machine, underscore, color):
             if machine:
                 print '%s:%s:%s:%s' % (file.name, i+1, match.start(0)+1, text.strip())
             else:                    
-                print 'Found in file %s, on line %s, column %s : %s' % (file.name, i+1, match.start(0)+1, text.strip())
+                print 'File %s, line %s, column %s : %s' % (file.name, i+1, match.start(0)+1, text.strip())
+                if underscore:
+                    position = len('File ' + file.name + ', line ' + str(i+1 )+ ', column ' + str(match.start(0)+1) + ' : ') + match.start(0)
+                    print "".ljust(position) + '^'
 
 
 def main():
