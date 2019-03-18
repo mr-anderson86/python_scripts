@@ -42,9 +42,9 @@ class BasePrint(object):
         raise NotImplementedError
 
     def factory(lines, machine=False, underscore=False):
-        if machine: 
+        if machine:
             return FormatPrint(lines, underscore)
-        if not machine: 
+        if not machine:
             return HumanPrint(lines, underscore)
         assert 0, "Bad shape creation: " + type
     factory = staticmethod(factory)
@@ -73,7 +73,7 @@ class FormatPrint(BasePrint):
         printStr = ""
         for line in self._lines:
             printStr = printStr + (str(line[0]) + ':' + str(line[1]) + ':' +
-                       str(line[2]) + ':' + str(line[3])) + '\n'
+                                   str(line[2]) + ':' + str(line[3])) + '\n'
 
         return printStr.strip()
 
