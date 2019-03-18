@@ -47,7 +47,7 @@ class BasePrint(object):
             return FormatPrint(lines, underscore)
         if not machine:
             return HumanPrint(lines, underscore)
-        assert 0, "Bad shape creation: " + type
+        assert 0, "Bad print format creation: " + str(machine)
     factory = staticmethod(factory)
 
 
