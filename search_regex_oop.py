@@ -1,7 +1,6 @@
 #!/bin/env python
 """
 search_regex_other.py
-
 Purpose: searches for lines matching regular expression within files/STDIN
 Usage:
     -r|--regex          Regular expression to search
@@ -10,22 +9,18 @@ Usage:
     -c|--color          highlight matching text. (Default false)
     -m|--machine        Generate machine readable output. (Default false)
                         Format: file_name:line_no:start_pos:matched_text
-
 Examples:
     python search_regex_other.py -r '\d+' -f file1.txt file2.txt
     python search_regex_other.py -r '\d+' -f file1.txt file2.txt -m
     python search_regex_other.py -r '\d+' -f file1.txt file2.txt -u -c
     python search_regex_other.py -r '\d+' -f file1.txt file2.txt -uc
     echo "Some stdin output 123" | python search_regex_other.py -r '\d+' -uc
-
 Author: Dovi Klausner
 Date: 17/03/2019
-
 This is one object oriented programming:
 Following command pattern, which uses interface class
 and implementing classes, all with same method names.
-
-Error handling: 
+Error handling:
 in case someone uses only BasePrint class, it'll raise NotImplementedError
 """
 import sys
@@ -35,8 +30,9 @@ import argparse
 red_color = "\033[31m"
 end_color = "\033[m"
 
+
 class BasePrint(object):
-    """Interface class, 
+    """Interface class,
        using factory to encapsulate differences  between output"""
     def __init__(self, lines, underscore=False):
         self._lines = lines
@@ -46,10 +42,13 @@ class BasePrint(object):
         raise NotImplementedError
 
     def factory(lines, machine=False, underscore=False):
-        if machine: return FormatPrint(lines, underscore)
-        if not machine: return HumanPrint(lines, underscore)
+        if machine: 
+            return FormatPrint(lines, underscore)
+        if not machine: 
+            return HumanPrint(lines, underscore)
         assert 0, "Bad shape creation: " + type
     factory = staticmethod(factory)
+
 
 class HumanPrint(BasePrint):
     """Print in "human" format"""
@@ -66,6 +65,7 @@ class HumanPrint(BasePrint):
 
         return printStr.strip()
 
+
 class FormatPrint(BasePrint):
     """Print in below format:
     file_name:line_num:start_pos:matched_text"""
@@ -73,7 +73,7 @@ class FormatPrint(BasePrint):
         printStr = ""
         for line in self._lines:
             printStr = printStr + (str(line[0]) + ':' + str(line[1]) + ':' +
-                  str(line[2]) + ':' + str(line[3])) + '\n'
+                       str(line[2]) + ':' + str(line[3])) + '\n'
 
         return printStr.strip()
 
