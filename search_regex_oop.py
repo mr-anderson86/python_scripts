@@ -17,7 +17,8 @@ Examples:
     echo "Some stdin output 123" | python search_regex_other.py -r '\d+' -uc
 Author: Dovi Klausner
 Date: 17/03/2019
-This is one object oriented programming:
+
+This one is object oriented programming:
 Following command pattern, which uses interface class
 and implementing classes, all with same method names.
 Error handling:
