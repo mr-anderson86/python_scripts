@@ -7,6 +7,7 @@ Usage:
     -r|--regex          Regular expression to search
     -f|--files          List of files, separated by space, (default is STDIN)
     -u|--underscore     Prints '^' under the matching text. (Default false)
+    -c|--color          highlight matching text. (Default false)
     -m|--machine        Generate machine readable output. (Default false)
                         Format: file_name:line_no:start_pos:matched_text
 
