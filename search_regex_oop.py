@@ -1,6 +1,6 @@
 #!/bin/env python
 """
-search_regex_other.py
+search_regex_oop.py
 Purpose: searches for lines matching regular expression within files/STDIN
 Usage:
     -r|--regex          Regular expression to search
@@ -10,11 +10,11 @@ Usage:
     -m|--machine        Generate machine readable output. (Default false)
                         Format: file_name:line_no:start_pos:matched_text
 Examples:
-    python search_regex_other.py -r '\d+' -f file1.txt file2.txt
-    python search_regex_other.py -r '\d+' -f file1.txt file2.txt -m
-    python search_regex_other.py -r '\d+' -f file1.txt file2.txt -u -c
-    python search_regex_other.py -r '\d+' -f file1.txt file2.txt -uc
-    echo "Some stdin output 123" | python search_regex_other.py -r '\d+' -uc
+    python search_regex_oop.py -r '\d+' -f file1.txt file2.txt
+    python search_regex_oop.py -r '\d+' -f file1.txt file2.txt -m
+    python search_regex_oop.py -r '\d+' -f file1.txt file2.txt -u -c
+    python search_regex_oop.py -r '\d+' -f file1.txt file2.txt -uc
+    echo "Some stdin output 123" | python search_regex_oop.py -r '\d+' -uc
 Author: Dovi Klausner
 Date: 17/03/2019
 This one is object oriented programming:
