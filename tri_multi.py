@@ -2,9 +2,16 @@
 """
 tri_multi.py
 Purpose: function gets a list of integers (at least 3 numbers), 
-         and returns the largest 3 numbers multiplication
+         and returns the largest 3 numbers multiplication.
+
+         So in case you have both positive and negative numbers in the list,
+         basically it's either (+a)*(+b)*(+c), or (-a)*(-b)*(+c)
+         You can't do (-a)*(+b)*(+c) since it is for sure a negative number
+         (Unless, of course, those are the only 3 number in the list.......)
+
 Usage:
     python tri_multi.py
+
 Author: Dovi Klausner
 Date: 04/2021
 """
@@ -18,8 +25,8 @@ def triMulti(mylist):
     """
     mylist.sort()
     l = len(mylist)
-    m1 = mylist[l - 1] * mylist[l - 2] * mylist[l - 3]  # [-5, -4, 0, 10, 20, 30, 40] or [-10, -7, -5, -1]
-    m2 = mylist[0] * mylist[1] * mylist[l - 1]  # [-10,-5, 0, 1, 2, 3]
+    m1 = mylist[l - 1] * mylist[l - 2] * mylist[l - 3]
+    m2 = mylist[0] * mylist[1] * mylist[l - 1]
     return max(m1, m2)
 
 def tryMultiBetter(arr):
