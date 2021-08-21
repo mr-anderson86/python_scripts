@@ -46,7 +46,7 @@ def arr_mul_no_div(arr):
     """
     Algorithm (without using divide operator):
     Allocate for temp list the number 1 (as first element)
-    Then each new element in temp = previous element in temp * arr[i-1].
+    Then each new element in temp = temp[i-1] * arr[i-1].
     (ranges from 1 to n)
     Example:
         arr = [11, 2, 3, 6, 8] -> temp = [1, 11, 22, 66, 396]
@@ -56,7 +56,7 @@ def arr_mul_no_div(arr):
         (66 = 22*3)
         (396 = 66*6)
 
-    Allocate fore result the number 1 (as last element!!!)
+    Allocate for result the number 1 (as last element!!!)
     Then for each new element in result (at location 0!!!) = last added result * arr[i]
     (ranges from n-1 to 0)
     Example:
