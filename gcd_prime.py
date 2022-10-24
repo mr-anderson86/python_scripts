@@ -53,9 +53,9 @@ def gcdPrime(a,b):
     return gcd
 
 def test(a, b, expected):
-    print("gcdPrime({}, {}) = {}".format(a, b, gcdPrime(a, b)))
-    x = gcdPrime(a, b)
-    assert gcdPrime(a, b) == expected
+    gcd = gcdPrime(a, b)
+    print("gcdPrime({}, {}) = {}".format(a, b, gcd))
+    assert gcd == expected
 
 def main():
     test(11, 99, 11)
@@ -69,7 +69,7 @@ def main():
     test(1010, 505, 101)
     test(1000000000, 1000000000, 5)
     test(999999937, 999999937, 999999937) # largest prime number before 10 billion...
-    test(999999937, 999999938, 1) # largest prime number before 10 billion...
+    test(999999937, 999999938, 1)
     test(2 ,2 ,2)
     test(1, 1, 1)
 
